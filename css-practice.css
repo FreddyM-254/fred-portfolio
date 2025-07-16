@@ -1,0 +1,276 @@
+body {
+  background-color: #f0f8ff;
+}
+h1 {
+  color: #2a52be;
+  font-family: Arial, sans-serif;
+}
+/* Add background to paragraphs */
+p {
+  background-color: #a8dadc;
+}
+/* Center the main heading */
+h1 {
+  text-align: center;
+}
+body {
+  margin: 40px;
+}
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+h1 {
+  border: 2px solid #457b9d;
+  padding: 10px;
+}
+
+p {
+  border-bottom: 1px dashed #1d3557;
+  padding-bottom: 8px;
+}
+h1 {
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+body {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+p {
+  width: 90%;
+}
+span {
+  display: inline-block;
+  background: #ffe066;
+  padding: 8px 16px;
+  margin: 4px;
+  border-radius: 8px;
+}
+.hidden-text {
+  visibility: hidden;
+}
+
+.gone-text {
+  display: none;
+}
+h1 {
+  color: #22223b;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+ul {
+  list-style-type: square;
+  padding-left: 32px;
+}
+
+ol {
+  list-style-type: upper-roman;
+  padding-left: 32px;
+}
+.box-relative {
+  position: relative;
+  left: 20px;
+  top: 10px;
+  background: #f9c74f;
+  padding: 10px;
+}
+
+.box-absolute {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  background: #90be6d;
+  padding: 10px;
+}
+
+.box-fixed {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: #577590;
+  color: #fff;
+  padding: 10px;
+}
+.box-relative {
+  z-index: 2;
+}
+
+.box-absolute {
+  z-index: 1;
+}
+.overflow-box {
+  width: 200px;
+  height: 60px;
+  background: #f94144;
+  color: #fff;
+  overflow: auto;
+}
+.center-text {
+  text-align: center;
+}
+.center-block {
+  width: 300px;
+  margin: 24px auto;
+  background: #b5ead7;
+  padding: 16px;
+  text-align: center;
+}
+.vertical-center {
+  height: 40px;
+  line-height: 40px;
+  background: #ffdac1;
+  text-align: center;
+}
+.fancy-btn {
+  background: #48bfe3;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fancy-btn:hover {
+  background: #0096c7;
+}
+
+.fancy-btn:active {
+  background: #023e8a;
+}
+
+.fancy-input {
+  padding: 8px;
+  border: 2px solid #adb5bd;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 12px;
+}
+
+.fancy-input:focus {
+  border-color: #48bfe3;
+  outline: none;
+}
+
+.colorful-list li:nth-child(2) {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.colorful-list li:nth-child(4) {
+  color: #457b9d;
+  font-style: italic;
+}
+.decorated-text::before {
+  content: "✨ ";
+}
+
+.decorated-text::after {
+  content: " ✨";
+}
+
+.decorated-text::first-line {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.decorated-text::first-letter {
+  font-size: 2em;
+  color: #457b9d;
+  float: left;
+  padding-right: 4px;
+}
+.transparent-img {
+  opacity: 0.5;
+}
+.transparent-bg {
+  background: rgba(70, 130, 180, 0.3); /* 0.3 = 30% visible */
+  padding: 16px;
+  margin-top: 16px;
+}
+/* Base styles for mobile devices (default) */
+body {
+  background-color: #ffe066;
+}
+h1 {
+  font-size: 1.5em;
+}
+.center-block {
+  width: 90%;
+  font-size: 1em;
+}
+@media (min-width: 601px) {
+  body {
+    background-color: #fff;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  .center-block {
+    width: 60%;
+    font-size: 1.2em;
+  }
+}
+
+.flex-container {
+  display: flex;
+  gap: 16px;
+  background: #f1faee;
+  padding: 16px;
+  margin-top: 24px;
+}
+.flex-item {
+  background: #48bfe3;
+  color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+}
+.flex-container {
+  flex-direction: column;
+}
+.flex-container {
+  justify-content: center;
+  align-items: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: #f1faee;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.grid-item {
+  background: #e63946;
+  color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+}
+.grid-item:first-child {
+  grid-column: 1 / 3;
+}
