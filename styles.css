@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  /* === Custom Color Palette === */
+  --primary: #818cf8;
+  --primary-foreground: #000000;
+  --secondary: #2dd4bf;
+  --secondary-foreground: #000000;
+  --accent: #fcd34d;
+  --accent-foreground: #000000;
+  --background: #ffffff;
+  --background-foreground: #ffffff;
+  --muted:#333333;
+  --muted-foreground: #cccccc;
+  --destructive: #f87171;
+  --destructive-foreground: #000000;
+  --border: #545454;
+  --input: #fcd34d;
+  --ring: #818cf8;
+  /* === End Custom Palette === */
+}
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  background-color: var(--background);
+  color: var(--background-foreground);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-foreground);
+}
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--background-foreground);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--primary);
+  transition: color 200ms;
+}
+
+a:hover, a:focus {
+  color: var(--accent);
+  text-decoration: underline;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* === End Theme Styles (Lesson 24) === */
+/* === Begin Portfolio Header & Navigation Styles (Lesson 25) === */
+.position-fixed {
+  position: fixed;
+}
+
+.header-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 48px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary);
+}
+
+@media screen and (min-width: 576px) {
+  .header-container {
+    padding: 0 60px;
+    height: 72px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding: 0 90px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-container {
+    padding: 0 120px;
+  }
+}
+
+.logo {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  display: block;
+  background-color: var(--accent);
+  height: 10px;
+  width: 20px;
+  border-radius: 0 0 15px 15px;
+  transition: all 150ms ease-in-out;
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo:hover span {
+  background-color: var(--muted);
+}
+
+.nav-wrapper ul {
+  display: flex;
+  gap: 32px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.nav-link {
+  display: none;
+}
+
+.nav-link a {
+  color: var(--secondary-foreground);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 150ms ease-in-out;
+}
+
+.nav-link a:hover, .nav-link a:focus {
+  background-color: var(--muted);
+  color: var(--primary-foreground);
+}
+
+.menu {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .nav-link {
+    display: block;
+  }
+}
+/* === End Portfolio Header & Navigation Styles (Lesson 25) === */
+/* === Begin Portfolio Mobile Menu (Lesson 26) === */
+
+.display-none {
+  display: none;
+}
+
+#menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.menu-layer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu-layer a {
+  color: var(--secondary-foreground);
+}
+
+.menu-layer button {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-layer ul {
+  margin-top: 100px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+/* The container class is used throughout the site for consistent horizontal spacing */
+.container {
+  margin: 0 24px;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    margin: 0 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 0 90px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: 0 120px;
+  }
+}
+/* === End Portfolio Mobile Menu (Lesson 26) === */
+/* === Begin Styling Portfolio Hero (Lesson 27) === */
+.hero-wrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: none;
+}
+
+.hero-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.hero-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  left: 8vw;
+  width: 140px;
+  height: 140px;
+  background: var(--primary);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-container .intro-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-foreground);
+  margin-bottom: 1rem;
+}
+
+.hero-container .highlight {
+  color: var(--accent);
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.hero-desc {
+  color: var(--secondary-foreground);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s;
+  margin-bottom: 2rem;
+}
+
+.hero-cta:hover, .hero-cta:focus {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media screen and (min-width: 768px) {
+  .hero-container {
+    max-width: 700px;
+    padding: 0 40px;
+  }
+  .hero-container .intro-text {
+    font-size: 3.2rem;
+  }
+  .hero-desc {
+    font-size: 1.3rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+/* === End Styling Portfolio Hero (Lesson 27) === */
+/* === Begin Styling Portfolio Projects Section (Lesson 28) === */
+.btn {
+  padding: 12px;
+  background-color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: var(--primary-foreground);
+  text-align: center;
+  cursor: pointer;
+  transition-property: color, background-color, filter, transform, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--ring);
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.projects-wrapper {
+  display: grid;
+  row-gap: 100px;
+}
+
+.project-container {
+  padding: 16px 16px 25px 16px;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.project-snapshot {
+  width: 100%;
+  height: 42%;
+  display: block;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  transition: filter 250ms ease-in-out;
+}
+
+.project-snapshot:hover {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+@media screen and (min-width: 768px) {
+  .project-container {
+    display: flex;
+    gap: 46px;
+    padding: 16px;
+  }
+
+  .project-snapshot {
+    height: 60vh;
+    flex: 1 1 100%;
+  }
+
+  .project-content {
+    flex: 1 1 100%;
+  }
+
+  .project-container .odd {
+    order: 999;
+  }
+}
+
+.project-snapshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-container h2 {
+  color: var(--primary-foreground);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  text-transform: capitalize;
+}
+
+.project-details {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.project-details .client-name,
+.project-details .role,
+.yearlb {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary-foreground);
+}
+
+.project-container .btn {
+  margin-top: 40px;
+}
+
+.technologies-used {
+  display: flex;
+  gap: 8px;
+}
+
+.technologies-used li {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: lowercase;
+  color: var(--primary);
+  padding: 4px 12px;
+  background-color: var(--muted);
+  border-radius: 8px;
+}
+
+.lang-list li {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+  gap: 16px;
+  background-color: var(--muted);
+  border-radius: 8px;
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--muted-foreground);
+}
+
+@media screen and (min-width: 768px) {
+  .lang-list {
+    display: flex;
+    gap: 12px;
+    max-width: 70%;
+  }
+
+  .lang-list li {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+}
+/* === End Styling Portfolio Projects Section (Lesson 28) === */
+/* === Begin Styling Portfolio About Section (Lesson 29) === */
+.intro-text {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: var(--primary-foreground);
+}
+
+.call-to-action {
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  padding: 16px 0;
+  text-align: center;
+  color: var(--secondary-foreground);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  line-height: 24px;
+}
+
+.about-wrapper {
+  padding-top: 100px;
+  padding-bottom: 200px;
+  position: relative;
+  background: none;
+}
+
+.about-wrapper::before,
+.about-wrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-container .btn {
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+}
+
+.tools-title {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--primary-foreground);
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .tools-title .title {
+    padding-left: 16px;
+  }
+}
+
+.b-bottom {
+  border-bottom: var(--border) 1px solid;
+}
+/* === End Styling Portfolio About Section (Lesson 29) === */
+/* === Begin Styling Portfolio Footer / Contact Section (Lesson 30) === */
+.contact-wrapper {
+  margin-top: -100px;
+  padding-bottom: 50px;
+  position: relative;
+  background: none;
+}
+
+.contact-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: var(--secondary);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.contact-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  right: 10vw;
+  width: 120px;
+  height: 120px;
+  background: var(--destructive);
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+  padding: 103px 24px 0 24px;
+  background-size: 65% 99%;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 15px;
+}
+
+@media screen and (min-width: 576px) {
+  .contact-container {
+    margin: 0 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-wrapper {
+    padding-bottom: 0;
+  }
+
+  .contact-container {
+    padding: 10% 20% 10% 20%;
+    background-size: 100% 100%;
+    background-position-x: 0;
+    background-position-y: 15px;
+    margin: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contact-container {
+    padding: 10% 30% 10% 30%;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    align-items: center;
+  }
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contact-container .intro-text {
+  text-align: center;
+  color: var(--primary-foreground);
+}
+
+.contact-container p {
+  text-align: center;
+  color: var(--secondary-foreground);
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 30px;
+}
+
+.contact-container input,
+textarea {
+  width: 100%;
+  background-color: var(--secondary);
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border-color: transparent;
+  outline: none;
+  color: var(--secondary-foreground);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  padding: 15px 38px 15px 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.contact-container input {
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.contact-container textarea {
+  height: 170px;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.contact-container button {
+  margin-top: 3px;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  transition: all 300ms ease-in-out;
+}
+
+.contact-container button:hover {
+  transform: translateY(-3px);
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .button-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.button-wrapper .error {
+  color: var(--destructive);
+  background-color: rgb(255, 255, 255, 0.3);
+  font-size: 11px;
+  padding: 2px 10px;
+  margin-top: 18px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .button-wrapper .error {
+    margin-top: 16px;
+    margin-left: 16px;
+    font-size: 12px;
+  }
+}
+/* === End Styling Portfolio Footer / Contact Section (Lesson 30) === */
