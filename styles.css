@@ -744,3 +744,71 @@ textarea {
   }
 }
 /* === End Styling Portfolio Footer / Contact Section (Lesson 30) === */
+/* ... existing CSS ... */
+
+.no-scroll {
+  overflow-y: hidden;
+  height: 100%;
+  margin: 0;
+}
+
+.display-none {
+  display: none;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+/* ... existing CSS ... */
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: scroll; /* Allow scrolling within the popup if content overflows */
+}
+
+.popup-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+/* Utility classes, ensure these are present as they are toggled by JS */
+.display-none {
+  display: none !important; /* Use !important to ensure override */
+}
+
+.position-fixed {
+  position: fixed !important; /* Use !important to ensure override */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.no-scroll {
+  overflow: hidden !important; /* Prevents body scrolling */
+  height: 100vh;
+}
